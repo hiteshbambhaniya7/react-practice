@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 function Header(props) {
-    return (<nav class="navbar navbar-light bg-black">
-        <div class="container-fluid justify-content-center">
-            <a class="navbar-brand text-white" href="#">{props.title} Year :- {props.year}</a>
+    return (<nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">{props.title} Year :- {props.year}</a>
         </div>
     </nav>);
 }
