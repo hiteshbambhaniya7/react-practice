@@ -1,17 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import "./index.css";
+import Menu from "./Menu";
+import Home from "./Home";
+import Objective from "./objective";
+import Afunction from "./function";
+import District from "./district";
+import Support from "./support";
+import Branches from "./branches";
+import Hr from "./hr";
+import Staff from "./faculty";
+import Nopage from "./nopage";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function MyRoute() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Menu />}>
+            <Route index path="/Home" element={<Home />} />
+            <Route path="/objective" element={<Objective />} />
+            <Route path="/function" element={<Afunction />} />
+            <Route path="/district" element={<District />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/branches" element={<Branches />} />
+            <Route path="/hr" element={<Hr />} />
+            <Route path="/faculty" element={<Staff />} />
+            <Route path='*' element={<Nopage />} />
+            
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<MyRoute />);
